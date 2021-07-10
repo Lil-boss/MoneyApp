@@ -3,21 +3,21 @@ const express = require("express");
 const app = express();
 
 const moneyData = require("./routes/MoneyData");
+const Homepage = require("./routes/Home");
 
 mongoose
-  .connect("mongodb://localhost/MoneyApp",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+  .connect("mongodb://localhost/MoneyApp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("SuccessFull........."))
   .catch(() => console.log("Failed........."));
 
 app.use(express.json());
 
+app.use("/home", Homepage);
 app.use("/api/money", moneyData);
 
 const port = process.env.PORT || 7000;
 
 app.listen(port, () => console.log(`Listing to port${port}...`));
-
