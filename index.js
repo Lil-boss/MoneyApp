@@ -15,7 +15,7 @@ mongoose
 
 app.use(express.json());
 
-app.use("/home", Homepage);
+app.use("/", Homepage);
 app.use("/api/money", moneyData);
 
 const port = process.env.PORT || 7000;
