@@ -6,7 +6,7 @@ const moneyData = require("./routes/MoneyData");
 const Homepage = require("./routes/Home");
 
 mongoose
-  .connect("mongodb://localhost/MoneyApp", {
+  .connect("mongodb+srv://admin:123@cluster0.z7gvl.mongodb.net/MoneyData", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
