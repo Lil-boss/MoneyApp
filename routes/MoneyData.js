@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
@@ -6,8 +5,12 @@ const router = express.Router();
 const { moneydata, validate } = require("../models/MoneyData");
 
 router.get("/", async (req, res) => {
-  const alldata = await moneydata.find().sort("name");
-  res.send(alldata);
+  try {
+    const alldata = await moneydata.find().sort("name");
+    res.send(alldata);
+  } catch (e) {
+    console.log("error...!", e);
+  }
 });
 
 router.post("/", async (req, res) => {
