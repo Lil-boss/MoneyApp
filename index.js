@@ -7,7 +7,7 @@ const Homepage = require("./routes/Home");
 
 mongoose
   .connect(
-    "mongodb+srv://admin:123@cluster0.z7gvl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongodb+srv://admin:123@cluster0.z7gvl.mongodb.net/MoneyData?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
