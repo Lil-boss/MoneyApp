@@ -30,8 +30,7 @@ const MoneyData = mongoose.model(
       type: String,
       required: true,
     },
-  }),
- 
+  })
 );
 
 function validatedata(moneydata) {
@@ -46,7 +45,9 @@ function validatedata(moneydata) {
   return Schema.validate(moneydata);
 }
 
-exports.validate = validatedata;
+// function validateData(MoneyData) {
+//   const schema = Joi.object({ moneyData: joi.string().required() });
+// }
+
+exports.validate = validatedata();
 exports.moneydata = MoneyData;
-
-
